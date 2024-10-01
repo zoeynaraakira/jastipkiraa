@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jastip Kira - Jasa Titip Barang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="banner">
+            <img src="image/banner.png" alt="Banner Jastip Kira" class="banner-img">
+            <div class="logo">
+                <img src="image/logo.png" alt="Logo Jastip Kira" class="logo-img">
+                <div class="logo-text">
+                    <h1>Jastip Kira</h1>
+                    <p>
+                    <ol> Cara Order Jastip Kira
+                    <li>Pilih barang yang ingin dibeli</li>
+                    <li>Masukan kedalam keranjang</li>
+                    <li>Periksa keranjang dan pilih "checkout"</li> 
+                    <li>Isi form alamat, no HP, dan nama lengkap</li>
+                    <li>Setelah menerima notif lakukan payment</li>
+                    <li>Upload bukti pembayaran</li>
+                    <li>Pesanan akan diurus dan dikirim</li>
+                    <li>Berikan penilaian setelah pesanan sampai</li>
+                    </ol>
+                    *NOTE: JIKA BARANG YANG INGIN DIBELI TIDAK ADA BISA ISI KOLOM KOMENTAR
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="icons">
+        <img src="image/icon-1.jpeg" alt="Keranjang" class="icon">
+        <img src="image/icon-3.jpeg" alt="Notifikasi" class="icon">
+        <img src="image/icon-4.jpeg" alt="Payment" class="icon">
+    </nav>
+
+    <section class="countries">
+        <h2>Negara Jastip</h2>
+        <div>
+        <img src="image/bl1.jpg" alt="Singapura" width="400" height="300">
+        <p> Rekomendasi produk jastip yang terfavorit dan populer di Singapura:
+            <ol>
+            <li>Makanan Ringan (Snack) Snack Irvins Potato Chips</li>
+            <li>Coklat Merlion </li>
+            <li>Perlengkapan MUA dan Kosmetik</li>
+            <li>Sepatu</li>
+            <li>Tas</li>
+            <li>Pakaian</li>
+            <li>Parfum</li>
+            </ol>
+        </p>
+        </div>
+        <div>
+        <img src="image/bl2.jpg" alt="Bangkok" width="400" height="300">
+        <p> Rekomendasi produk jastip yang terfavorit dan populer di Bangkok:
+            <ol>
+               <li>Body lotion , Body serum , dan Body Scrub</li>
+               <li>Kosmetik</li>
+               <li>Produk Jelly Bunny (pakaian dan sandal)</li>
+               <li>Gelang anti karat</li>
+               <li>Snack kering</li>
+               <li>Keychan dan Blind Box</li>
+            </ol>
+        </p>
+        </div>
+        <div>
+        <img src="image/bl3.jpg" alt="Jepang" width="400" height="300">
+        <p> Rekomendasi produk jastip yang terfavorit dan populer di Jepang:
+            <ol>
+                <li>Sepatu Onitsuka Tiger</li>
+                <li>Jam Tangan Seiko</li>
+                <li>Merchandise Anime</li>
+                <li>Cangkir Teh dan Set Minum Sake</li>
+                <li>Daruma</li>
+            </ol>
+
+        </p>
+        </div>
+
+    <section class="product-list">
+        <h2>Produk Terbaru</h2>
+        <div id="products" class="product-grid">
+            <!-- Produk ditambahkan via JavaScript -->
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>Keranjang Belanja</h2>
+        <ul id="cart-items">
+            <!-- Item keranjang ditambahkan via JavaScript -->
+        </ul>
+        <p id="total-price">Total Belanja: Rp 0</p>
+        <button id="checkout-btn">Checkout</button>
+    </section>
+
+    <!-- Checkout Form -->
+    <section class="checkout-form" id="checkout-form" style="display:none;">
+        <h2>Checkout</h2>
+        <form id="order-form">
+            <label for="name">Nama Lengkap:</label>
+            <input type="text" id="name" required>
+            
+            <label for="phone">No HP:</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="address">Alamat Pengiriman:</label>
+            <textarea id="address" rows="4" required></textarea>
+
+            <label for="payment-method">Metode Pembayaran:</label>
+            <select id="payment-method" required>
+                <option value="DANA">DANA - 085740263865</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <option value="GoPay">GoPay</option>
+            </select>
+
+            <button type="submit">Konfirmasi Pesanan</button>
+        </form>
+    </section>
+
+    <!-- Order Status Section -->
+    <section class="order-status" id="order-status" style="display:none;">
+        <h2>Status Pesanan</h2>
+        <div id="order-tracker">
+            <p>Status: <span id="order-status-text">Belum Dibayar</span></p>
+            <button id="pay-now-btn">Bayar Sekarang</button>
+            <p id="upload-proof">Upload Bukti Pembayaran: <input type="file" id="payment-proof"></p>
+            <button id="confirm-payment-btn">Konfirmasi Pembayaran</button>
+        </div>
+    </section>
+
+    <!-- Rating Section -->
+    <section class="rating-section" id="rating-section" style="display:none;">
+        <h2>Beri Penilaian</h2>
+        <label for="rating">Rating Produk:</label>
+        <select id="rating" required>
+            <option value="1">1 Bintang</option>
+            <option value="2">2 Bintang</option>
+            <option value="3">3 Bintang</option>
+            <option value="4">4 Bintang</option>
+            <option value="5">5 Bintang</option>
+        </select>
+
+        <label for="review">Review:</label>
+        <textarea id="review" rows="4" placeholder="Berikan ulasan Anda"></textarea>
+        <button id="submit-rating-btn">Kirim Penilaian</button>
+    </section>
+
+    <section class="owner-profile"></section>
+        <h2>Profil Owner</h2>
+        <div class="owner-info">
+            <img src="image/kira.jpeg" alt="Owner Jastip Kira" width="300" height="300" class="owner-img">
+            <p>Halo! Saya Kira, pemilik Jastip Kira. Saya memiliki pengalaman lebih dari 5 tahun dalam jasa titip barang dari berbagai negara. 
+            Kepercayaan dan kenyamanan pelanggan adalah prioritas utama saya. Jangan ragu untuk bertanya atau request barang yang diinginkan. 
+            Hubungi saya di <a href="https://wa.me/085740263865" target="_blank">WhatsApp</a> untuk informasi lebih lanjut!</p>
+        </div>
+    </section>
+
+    <section class="comments">
+        <h2>Kolom Komentar</h2>
+        <form id="comment-form">
+            <textarea id="comment-text" placeholder="Tulis request product jastip..."></textarea>
+            <button type="submit">Kirim Komentar</button>
+        </form>
+        <div id="comment-list">
+            <!-- Komentar ditambahkan via JavaScript -->
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Follow kami di Instagram: <a href="https://instagram.com/grolinessss" target="_blank">@grolinessss</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
